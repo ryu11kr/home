@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="96" fill="#1c2433"/>
+  <text
+    x="256"
+    y="228"
+    text-anchor="middle"
+    fill="#f8fafc"
+    font-family="Segoe UI, Pretendard, Apple SD Gothic Neo, sans-serif"
+    font-size="132"
+    font-weight="800"
+    letter-spacing="4"
+  >UX</text>
+  <rect x="176" y="252" width="160" height="14" rx="7" fill="#2dd4bf"/>
+  <text
+    x="256"
+    y="318"
+    text-anchor="middle"
+    fill="#94a3b8"
+    font-family="Segoe UI, Pretendard, sans-serif"
+    font-size="44"
+    font-weight="600"
+    letter-spacing="6"
+  >pwa</text>
+</svg>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UXPWA 아이콘 샘플</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 1.5rem;
+        font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+        background: #e5e7eb;
+        color: #111827;
+      }
+      h1 {
+        font-size: 1.25rem;
+        margin: 0 0 1rem;
+      }
+      .grid {
+        display: grid;
+        gap: 1.25rem;
+        max-width: 52rem;
+      }
+      .card {
+        padding: 1.25rem;
+        background: #fff;
+        border-radius: 1rem;
+        border: 1px solid #e5e7eb;
+      }
+      .card h2 {
+        margin: 0 0 0.35rem;
+        font-size: 1.05rem;
+      }
+      .card p {
+        margin: 0 0 1rem;
+        font-size: 0.92rem;
+        color: #6b7280;
+        line-height: 1.5;
+      }
+      .sizes {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: 1.25rem;
+      }
+      .size {
+        text-align: center;
+        font-size: 0.75rem;
+        color: #6b7280;
+      }
+      .size img {
+        display: block;
+        border-radius: 18%;
+        margin: 0 auto 0.35rem;
+        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.12);
+      }
+      .hint {
+        margin-top: 1.5rem;
+        font-size: 0.88rem;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>UXPWA 웹 아이콘 샘플</h1>
+    <div class="grid">
+      <section class="card">
+        <h2>1안 (추천) — UX + 청록 막대 + pwa</h2>
+        <p>512·홈화면·og용. UX를 크게, PWA는 보조 텍스트.</p>
+        <div class="sizes">
+          <div class="size">
+            <img src="./uxpwa-sample-1.svg" width="512" height="512" alt="" />
+            512
+          </div>
+          <div class="size">
+            <img src="./uxpwa-sample-1.svg" width="192" height="192" alt="" />
+            192
+          </div>
+          <div class="size">
+            <img src="./uxpwa-sample-1.svg" width="48" height="48" alt="" />
+            48
+          </div>
+        </div>
+      </section>
+      <section class="card">
+        <h2>파비콘용 — UX + 막대만</h2>
+        <p>브라우저 탭 16~32px에서도 읽기 좋게 pwa 생략.</p>
+        <div class="sizes">
+          <div class="size">
+            <img src="./uxpwa-sample-favicon.svg" width="192" height="192" alt="" />
+            192
+          </div>
+          <div class="size">
+            <img src="./uxpwa-sample-favicon.svg" width="32" height="32" alt="" />
+            32
+          </div>
+          <div class="size">
+            <img src="./uxpwa-sample-favicon.svg" width="16" height="16" alt="" />
+            16
+          </div>
+        </div>
+      </section>
+      <section class="card">
+        <h2>2안 — Progressive 3단 막대</h2>
+        <p>점진적 개선(P)을 그래픽으로만 표현.</p>
+        <div class="sizes">
+          <div class="size">
+            <img src="./uxpwa-sample-2-progressive.svg" width="512" height="512" alt="" />
+            512
+          </div>
+          <div class="size">
+            <img src="./uxpwa-sample-2-progressive.svg" width="48" height="48" alt="" />
+            48
+          </div>
+        </div>
+      </section>
+    </div>
+    <p class="hint">
+      <code>home\serve.cmd</code> 실행 후
+      <code>/icons/samples/preview.html</code> 로 열면 브라우저에서 확인할 수 있습니다.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="96" fill="#1c2433"/>
+  <text
+    x="256"
+    y="268"
+    text-anchor="middle"
+    fill="#f8fafc"
+    font-family="Segoe UI, Pretendard, Apple SD Gothic Neo, sans-serif"
+    font-size="156"
+    font-weight="800"
+    letter-spacing="4"
+  >UX</text>
+  <rect x="160" y="302" width="192" height="16" rx="8" fill="#2dd4bf"/>
+</svg>
