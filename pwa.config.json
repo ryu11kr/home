@@ -1,0 +1,13 @@
+{
+  "slug": "home",
+  "name": "UXPWA",
+  "shortName": "UXPWA",
+  "publicUrl": "https://uxpwa.com",
+  "description": "기술보다 사람을 먼저 생각합니다. 버스첩·물때첩 등 실용적인 웹서비스.",
+  "lang": "ko",
+  "themeColor": "#1c2433",
+  "backgroundColor": "#f4f5f7",
+  "cachePrefix": "uxpwa-home",
+  "devPort": 5172,
+  "categories": ["utilities"]
+}

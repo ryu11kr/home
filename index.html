@@ -14,17 +14,47 @@
     <meta property="og:image" content="https://uxpwa.com/icons/icon-512.png" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:image" content="https://uxpwa.com/icons/icon-512.png" />
+    <meta name="theme-color" content="#1c2433" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="UXPWA" />
     <title>UXPWA</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
     <link rel="apple-touch-icon" href="./icons/icon-192.png" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./deploy-version.js"></script>
   </head>
   <body>
+    <div id="app-update-banner" class="app-update-banner" hidden role="alert" aria-live="assertive">
+      <p class="app-update-banner-text">새 버전이 나왔어요</p>
+      <p class="app-update-banner-sub">업데이트를 누르면 최신 화면으로 바뀝니다.</p>
+      <button type="button" id="app-update-apply" class="big-btn primary">업데이트</button>
+    </div>
+
+    <dialog
+      id="app-update-complete-dialog"
+      class="app-update-complete-dialog"
+      aria-labelledby="app-update-complete-title"
+    >
+      <h2 id="app-update-complete-title" class="dialog-title">업데이트 완료</h2>
+      <p class="dialog-help">업데이트가 완료되었습니다.</p>
+      <button type="button" id="app-update-complete-ok" class="big-btn primary">확인</button>
+    </dialog>
+
     <div class="page">
       <header class="hero" aria-labelledby="site-title">
-        <p class="hero-brand" id="site-title">UXPWA</p>
-        <h1 class="hero-headline">기술보다 사람을 먼저 생각합니다.</h1>
+        <h1 class="hero-brand" id="site-title" aria-label="UXPWA">
+          <span class="hero-ux">UX</span>
+          <span class="hero-brand-pwa-line">
+            <span class="hero-brand-bars" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+            <span class="hero-pwa">pwa</span>
+          </span>
+        </h1>
+        <p class="hero-headline">기술보다 사람을 먼저 생각합니다.</p>
         <p class="hero-body">
           일상의 작은 불편함을 발견하고, 누구나 쉽고 편리하게 사용할 수 있는 실용적인 웹서비스를
           만듭니다.
@@ -54,7 +84,7 @@
                   />
                 </span>
                 <span class="service-top">
-                  <span class="service-name">BUS</span>
+                  <span class="service-name">bus.uxpwa.com</span>
                   <span class="badge badge-live">운영 중</span>
                 </span>
                 <span class="service-desc">버스첩 - 버스 시간표 사진 관리</span>
@@ -78,7 +108,7 @@
                   />
                 </span>
                 <span class="service-top">
-                  <span class="service-name">SEA</span>
+                  <span class="service-name">sea.uxpwa.com</span>
                   <span class="badge badge-live">운영 중</span>
                 </span>
                 <span class="service-desc">물때첩 - 바다 포인트 물때·날씨</span>
@@ -132,5 +162,6 @@
         </p>
       </footer>
     </div>
+    <script type="module" src="./js/app.js"></script>
   </body>
 </html>

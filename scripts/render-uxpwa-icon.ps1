@@ -42,7 +42,6 @@ function Draw-UxpwaProgressiveIcon {
 
   $bg = ConvertFrom-HexColor "#1c2433"
   $white = ConvertFrom-HexColor "#f8fafc"
-  $pwaGray = ConvertFrom-HexColor "#b8c5d6"
   $teal = ConvertFrom-HexColor "#2dd4bf"
 
   $path = New-Object System.Drawing.Drawing2D.GraphicsPath
@@ -56,7 +55,7 @@ function Draw-UxpwaProgressiveIcon {
   if ($Maskable) { $s *= 0.82 }
 
   $fontUx = New-Object System.Drawing.Font("Segoe UI", [Math]::Max(6, [single](132 * $s)), [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
-  $fontPwa = New-Object System.Drawing.Font("Segoe UI", [Math]::Max(5, [single](50 * $s)), [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
+  $fontPwa = New-Object System.Drawing.Font("Segoe UI", [Math]::Max(5, [single](120 * $s)), [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
 
   $sfCenter = New-Object System.Drawing.StringFormat
   $sfCenter.Alignment = [System.Drawing.StringAlignment]::Center
@@ -92,7 +91,7 @@ function Draw-UxpwaProgressiveIcon {
 
   $pwaTop = $barY + $barH + $gapBarPwa
   $pwaRect = New-Object System.Drawing.RectangleF ($centerX - $pwaSize.Width / 2), $pwaTop, $pwaSize.Width, $pwaSize.Height
-  $g.DrawString("pwa", $fontPwa, (New-Object System.Drawing.SolidBrush $pwaGray), $pwaRect, $sfCenter)
+  $g.DrawString("pwa", $fontPwa, (New-Object System.Drawing.SolidBrush $white), $pwaRect, $sfCenter)
 
   $g.Dispose()
   return $bmp

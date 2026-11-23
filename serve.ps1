@@ -1,19 +1,23 @@
 ﻿param([int] $Port = 0)
 
+. (Join-Path $PSScriptRoot "shell-version.ps1")
 . (Join-Path $PSScriptRoot "..\Get-PwaDevPort.ps1")
 
 $root = [IO.Path]::GetFullPath($PSScriptRoot).TrimEnd('\') + '\'
 $port = if ($Port -gt 0) { $Port } else { Get-PwaDevPort -AppRoot $PSScriptRoot }
 $types = @{
-  ".html" = "text/html; charset=utf-8"
-  ".css"  = "text/css; charset=utf-8"
-  ".js"   = "text/javascript; charset=utf-8"
-  ".json" = "application/json; charset=utf-8"
-  ".svg"  = "image/svg+xml"
-  ".png"  = "image/png"
-  ".jpg"  = "image/jpeg"
-  ".webp" = "image/webp"
+  ".html"        = "text/html; charset=utf-8"
+  ".css"         = "text/css; charset=utf-8"
+  ".js"          = "text/javascript; charset=utf-8"
+  ".webmanifest" = "application/manifest+json; charset=utf-8"
+  ".json"        = "application/json; charset=utf-8"
+  ".svg"         = "image/svg+xml"
+  ".png"         = "image/png"
+  ".jpg"         = "image/jpeg"
+  ".webp"        = "image/webp"
 }
+
+Sync-ShellVersion -Root $root | Out-Null
 
 $listener = [Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback, $port)
 try {
@@ -27,6 +31,7 @@ try {
 
 Write-Output "폴더: home"
 Write-Output "http://127.0.0.1:$port/"
+Write-Output "종료: Ctrl+C  |  HTML/CSS/JS 저장 후 브라우저 요청 시 빌드 반영 (유휴 시 서버 감시 없음)"
 Write-Output ""
 
 . (Join-Path $PSScriptRoot "..\PwaServeLoop.ps1")
@@ -46,6 +51,11 @@ try {
       while ($true) {
         $line = $reader.ReadLine()
         if ([string]::IsNullOrEmpty($line)) { break }
+      }
+
+      $bumped = Sync-ShellVersion -Root $root
+      if ($bumped) {
+        Write-Output "[PWA] shell 변경 → 빌드 $bumped"
       }
 
       $parts = $request.Split(" ")

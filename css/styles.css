@@ -53,10 +53,70 @@ body {
 }
 
 .hero-brand {
-  margin: 0 0 1.1rem;
-  font-size: 1.5rem;
+  --hero-lockup-size: clamp(2.35rem, 10vw, 3.15rem);
+  --hero-lockup-gap: 0.72rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 0 0 2.1rem;
+  font-size: var(--hero-lockup-size);
+  font-weight: 800;
+  line-height: 1;
+  gap: var(--hero-lockup-gap);
+}
+
+.hero-ux {
+  font-size: 1em;
   font-weight: 800;
   letter-spacing: 0.02em;
+  color: var(--hero-text);
+}
+
+/* pwa 글자 폭 기준 — 아이콘(바 전체 ≈ 글자+8%)과 동일 */
+.hero-brand-pwa-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: var(--hero-lockup-gap); */
+  font-size: calc(1em * 120 / 132);
+  line-height: 1;
+}
+
+.hero-brand-bars {
+  display: flex;
+  align-items: center;
+  gap: 0.125em;
+  width: calc(100% + 0.22em);
+  margin: 0;
+}
+
+.hero-brand-bars span {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 0.19em;
+  border-radius: 999px;
+  background: #2dd4bf;
+}
+
+.hero-brand-bars span:nth-child(1) {
+  opacity: 0.45;
+}
+
+.hero-brand-bars span:nth-child(2) {
+  opacity: 0.75;
+}
+
+.hero-brand-bars span:nth-child(3) {
+  opacity: 1;
+}
+
+.hero-pwa {
+  font-size: inherit;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--hero-text);
+  text-transform: lowercase;
 }
 
 .hero-headline {
@@ -64,6 +124,7 @@ body {
   font-size: clamp(1.35rem, 4.8vw, 1.65rem);
   font-weight: 800;
   line-height: 1.35;
+  color: var(--hero-muted);
 }
 
 .hero-body {
@@ -239,4 +300,86 @@ body {
 
 .footer-contact a:hover {
   color: var(--accent);
+}
+
+.app-update-banner[hidden] {
+  display: none !important;
+}
+
+.app-update-banner {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 2200;
+  display: block;
+  padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom, 0px));
+  text-align: center;
+  background: var(--hero);
+  color: #fff;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.app-update-banner-text {
+  margin: 0;
+  font-size: clamp(1.25rem, 4.5vw, 1.45rem);
+  font-weight: 800;
+}
+
+.app-update-banner-sub {
+  margin: 0.35rem 0 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--hero-muted);
+}
+
+.app-update-banner .big-btn {
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+.big-btn {
+  display: block;
+  width: 100%;
+  min-height: 3rem;
+  border-radius: 0.85rem;
+  border: 2px solid transparent;
+  padding: 0.85rem 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.35;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.big-btn.primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: #1d4ed8;
+}
+
+.app-update-complete-dialog {
+  width: min(22rem, calc(100% - 2rem));
+  padding: 1.25rem;
+  border: none;
+  border-radius: var(--radius-lg);
+}
+
+.app-update-complete-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.dialog-title {
+  margin: 0 0 0.55rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.dialog-help {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--muted);
 }
