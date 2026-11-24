@@ -81,11 +81,39 @@
             "name": "UXPWA",
             "alternateName": "UXPWA 개인화 맞춤형 웹서비스",
             "url": "https://uxpwa.com/",
-            "description": "모두에게 똑같은 서비스가 아닌, 나에게 맞는 개인화 맞춤형 서비스를 제공합니다.",
+            "description": "모두에게 똑같은 서비스가 아닌, 나에게 맞는 웹서비스. 버스첩, 물때첩 등 개인화 맞춤형 서비스를 제공합니다.",
             "inLanguage": "ko-KR",
             "publisher": {
               "@id": "https://uxpwa.com/#organization"
-            }
+            },
+            "hasPart": [
+              {
+                "@id": "https://bus.uxpwa.com/#website"
+              },
+              {
+                "@id": "https://sea.uxpwa.com/#website"
+              }
+            ]
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "https://bus.uxpwa.com/#website",
+            "name": "버스첩",
+            "url": "https://bus.uxpwa.com/",
+            "description": "버스 정류장에 게시된 버스시간표를 사진으로 저장하고 편리하게 확인하는 웹앱입니다.",
+            "applicationCategory": "TravelApplication",
+            "operatingSystem": "Any",
+            "inLanguage": "ko-KR"
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "https://sea.uxpwa.com/#website",
+            "name": "물때첩",
+            "url": "https://sea.uxpwa.com/",
+            "description": "자주 가는 바다와 낚시 포인트를 등록하고 포인트별 물때, 조석예보, 바다 날씨를 확인하는 웹앱입니다.",
+            "applicationCategory": "LifestyleApplication",
+            "operatingSystem": "Any",
+            "inLanguage": "ko-KR"
           }
         ]
       }
