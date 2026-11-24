@@ -63,6 +63,34 @@
     <link rel="apple-touch-icon" href="./icons/icon-192.png" />
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="./deploy-version.js"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://uxpwa.com/#organization",
+            "name": "UXPWA",
+            "url": "https://uxpwa.com/",
+            "description": "사용자의 필요와 취향에 맞춰 정보를 구성하고 이용할 수 있는 개인화 맞춤형 웹서비스 플랫폼입니다."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://uxpwa.com/#website",
+            "name": "UXPWA",
+            "alternateName": "UXPWA 개인화 맞춤형 웹서비스",
+            "url": "https://uxpwa.com/",
+            "description": "모두에게 똑같은 서비스가 아닌, 나에게 맞는 개인화 맞춤형 서비스를 제공합니다.",
+            "inLanguage": "ko-KR",
+            "publisher": {
+              "@id": "https://uxpwa.com/#organization"
+            }
+          }
+        ]
+      }
+      </script>
+
   </head>
   <body>
     <div id="app-update-banner" class="app-update-banner" hidden role="alert" aria-live="assertive">
